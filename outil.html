@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Forever Love Tool</title>
-<style>body{font-family:system-ui;background:#fff0f5;padding:15px} .card{background:white;padding:20px;border-radius:20px;max-width:500px;margin:auto} input,textarea{width:100%;padding:15px;margin:10px 0;border:2px solid #ffb6d9;border-radius:12px;box-sizing:border-box;font-size:16px} button{background:#e91e63;color:white;border:0;padding:16px;width:100%;border-radius:12px;font-size:18px;font-weight:bold} img{max-width:100%;margin-top:15px}</style>
-</head><body><div class="card"><h2 style="text-align:center;color:#e91e63">🎁 Forever Love QR Generator</h2>
+<style>body{font-family:system-ui;background:#fff0f5;padding:15px} .card{background:white;padding:20px;border-radius:20px;max-width:500px;margin:auto} input,textarea{width:100%;padding:15px;margin:10px 0;border:2px solid #ffb6d9;border-radius:12px;box-sizing:border-box;font-size:16px} button{background:#e91e63;color:white;border:0;padding:14px;width:100%;border-radius:12px;font-size:16px;font-weight:bold;margin-top:8px} img{max-width:100%;margin-top:15px;border-radius:12px} .link-box{background:#f9f9f9;padding:12px;border-radius:10px;word-break:break-all;font-size:13px;margin-top:15px;border:1px dashed #e91e63}</style>
+</head><body><div class="card"><h2 style="text-align:center;color:#e91e63">Forever Love QR Generator</h2>
 <input id="n" placeholder="For: My love Sarah">
 <textarea id="m" rows="3" placeholder="Message: I wish you all the best..."></textarea>
-<button onclick="G()">✨ Generate QR Code</button>
+<button onclick="G()">Generate QR Code</button>
 <div id="r" style="text-align:center"></div></div>
-<script>function G(){let a=document.getElementById('n').value,b=document.getElementById('m').value;let l=`https://emotional-qr-shope.github.io/Love-qr/?to=${encodeURIComponent(a)}&msg=${encodeURIComponent(b)}`;let q=`https://api.qrserver.com/v1/create-qr-code/?size=800x800&data=${encodeURIComponent(l)}`;document.getElementById('r').innerHTML=`<img src="${q}"><br><br><a href="${q}" target="_blank"><button style="background:#333">⬇️ Download QR</button></a>`;}</script>
+<script>function G(){let a=document.getElementById('n').value,b=document.getElementById('m').value;let l=`https://emotional-qr-shope.github.io/Love-qr/?to=${encodeURIComponent(a)}&msg=${encodeURIComponent(b)}`;let q=`https://api.qrserver.com/v1/create-qr-code/?size=800x800&data=${encodeURIComponent(l)}`;document.getElementById('r').innerHTML=`<img src="${q}"><div class="link-box"><b>Link for client:</b><br>${l}</div><button onclick="navigator.clipboard.writeText('${l}')">Copy Link</button><br><a href="${q}" target="_blank"><button style="background:#333">Download QR</button></a>`;}</script>
 </body></html>
